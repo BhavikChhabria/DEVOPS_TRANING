@@ -1,0 +1,37 @@
+---
+- name: Deploy Web Application
+  hosts: all
+  become: yes
+  vars:
+    website_source: ./website  # Default source path on Ansible controller
+    website_dest: /var/www/html/  # Destination path on remote server
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Ensure Apache is installed
+      apt:
+        name: apache2
+        state: present
+
+    - name: Fix missing packages
+      apt:
+        upgrade: dist
+        update_cache: yes
+
+    - name: Start Apache service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Copy website files to remote server
+      copy:
+        src: "{{ website_source }}/"
+        dest: "{{ website_dest }}"
+        owner: www-data
+        group: www-data
+        mode: '0644'
+

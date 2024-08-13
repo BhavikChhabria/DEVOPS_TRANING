@@ -1,0 +1,44 @@
+# plugin: aws_ec2
+# regions:
+#   - us-east-2
+# filters:
+#   instance-state-name:
+#     - running
+# hostnames:
+#   - dns-name
+# compose:
+#   ansible_host: public_dns_name
+# # strict: False
+
+
+# plugin: aws_ec2
+# regions:
+#   - us-east-2
+# filters:
+#   instance-state-name:
+#     - running
+# hostnames:
+#   - dns-name
+# compose:
+#   ansible_host: public_dns_name
+#   groups:
+#     webservers: "'webserver' in tags.Name"
+
+# plugin: aws_ec2
+# regions:
+#   - us-east-2
+# filters:
+#   instance-state-name: running
+
+
+plugin: aws_ec2
+regions:
+  - us-east-2
+filters:
+  instance-state-name: 
+    - running
+  tag:Name: Bhavik
+hostnames:
+  - dns-name
+compose:
+  ansible_host: public_dns_name

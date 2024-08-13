@@ -1,0 +1,13 @@
+---
+- name: Apache Container Management
+  hosts: localhost
+  tasks:
+    - name: Create and run Apache container
+      community.docker.docker_container:
+        name: my_apache
+        image: httpd:latest
+        state: started
+        ports:
+          - "8084:80"
+        volumes:
+          - /my/local/path:/usr/local/apache2/htdocs
