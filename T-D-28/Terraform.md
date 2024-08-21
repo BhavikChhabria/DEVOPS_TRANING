@@ -80,3 +80,10 @@ Screenshots:
 
 ![alt text](<images/Screenshot from 2024-08-20 16-34-04.png>)
 
+![alt text](<images/Screenshot from 2024-08-21 11-27-52.png>)
+
+![alt text](<images/Screenshot from 2024-08-21 11-28-22.png>)
+
+![alt text](<images/Screenshot from 2024-08-21 11-28-58.png>)
+
+![alt text](<images/Screenshot from 2024-08-21 11-29-10.png>)
