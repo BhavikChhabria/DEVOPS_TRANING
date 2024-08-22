@@ -37,8 +37,8 @@ resource "aws_security_group" "web" {
 
 # EC2 Instance Configuration
 resource "aws_instance" "app" {
-  ami             = "ami"  
-#   instance_type = "t2.medium"  
+  ami             = "ami-id"  
+  # instance_type = "t2.medium"  
   instance_type   = var.instance_type
   subnet_id       = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.web.id]  # Using Security Group ID
